@@ -1,5 +1,7 @@
 # ClearCal — Contrast for Notion Calendar
 
+![ClearCal — 予定が、くっきり。Contrast for Notion Calendar](marketing/clearcal-thumbnail.png)
+
 [English below](#english)
 
 Notion Calendarの配色をGoogle Calendar風にする、非公式Chrome拡張です。**白い背景のライトモードが既定**で、ダークモードにも切り替えられます。
