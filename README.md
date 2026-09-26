@@ -37,7 +37,7 @@ Notion Calendarを使う中で、自分の色の見え方では元の配色の�
 
 > **オリジナルの設計への敬意**
 >
-> Cron／Notion Calendarの設計者である[Raphael Schaad氏](https://www.notion.com/blog/introducing-notion-calendar)をはじめ、開発チームの設計思想と細部への配慮に敬意を表します。本拡張による配色変更が本来の設計意図に沿わない場合には、ご容赦いただければ幸いです。
+> Cron／Notion Calendarの設計・開発に携わる皆さまの設計思想と、細部への配慮に敬意を表します。本拡張による配色変更が本来の設計意図に沿わない場合には、ご容赦いただければ幸いです。
 
 ## インストール
 
@@ -139,7 +139,7 @@ It started as a personal tool, but I decided to share it for anyone who feels th
 
 > **Respect for the original design**
 >
-> I respect the design philosophy and attention to detail of [Raphael Schaad](https://www.notion.com/blog/introducing-notion-calendar), the designer behind Cron / Notion Calendar, and the development team. I ask for their understanding if these color adjustments depart from the original design intent.
+> I respect the design philosophy and attention to detail of everyone involved in designing and developing Cron / Notion Calendar. I ask for their understanding if these color adjustments depart from the original design intent.
 
 ### Installation
 
