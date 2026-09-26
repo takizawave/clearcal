@@ -19,6 +19,16 @@ Notion Calendarの配色をGoogle Calendar風にする、非公式Chrome拡張�
 - ワンクリックで元の配色に復元
 - 予定の配置・サイズ・操作・同期先はそのまま
 
+## 10秒で見る
+
+スイッチをオン → オフ → オン。予定の配置はそのまま、配色だけが切り替わります。実UIと拡張のコードを使い、架空の予定で作ったデモです。
+
+![ClearCalのオン・オフで、通常の予定と不在の配色が切り替わる10秒デモ](marketing/demo/clearcal-toggle.gif)
+
+[動画を見る・ダウンロードする（MP4・10秒、クリック音あり）](https://github.com/takizawave/clearcal/raw/refs/heads/main/marketing/demo/clearcal-toggle.mp4)
+
+*10-second demo with fictional events: toggle ClearCal on, off, and on. Same layout; different colors. The MP4 includes subtle click sounds.*
+
 ## 作ったきっかけ
 
 Notion Calendarを使っていて、予定の背景色と文字色のコントラストが自分には弱く、予定名や時刻を読み取りづらく感じることがありました。そこで、使い慣れたGoogle Calendarの配色を参考に、自分が見やすい色に調整するために作った拡張です。
