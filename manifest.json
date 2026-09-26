@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Calendar Look for Notion",
+  "version": "0.1.2",
+  "description": "Notion CalendarをGoogle Calendar風の見た目に切り替えます。",
+  "permissions": [
+    "storage"
+  ],
+  "action": {
+    "default_title": "Calendar Look",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://calendar.notion.so/*"
+      ],
+      "css": [
+        "theme.css"
+      ],
+      "js": [
+        "colors.js",
+        "content.js"
+      ],
+      "run_at": "document_start"
+    }
+  ]
+}

@@ -1,0 +1,148 @@
+/* Google dark colors measured in signed-in UI, 2026-09-26.
+   Only colors change. Geometry and native event states are retained. */
+html[data-calendar-look="dark"] {
+  color-scheme: dark;
+  --cl-page: #131314;
+  --cl-shell: #1b1b1b;
+  --cl-elevated: #282a2c;
+  --cl-hover: #37393b;
+  --cl-text: #e3e3e3;
+  --cl-secondary: #c4c7c5;
+  --cl-muted: #9aa0a6;
+  --cl-grid: #333537;
+  --cl-border: #747775;
+  --cl-accent: #a8c7fa;
+  --cl-on-accent: #062e6f;
+  --cl-selected: #004a77;
+  --cl-now: #f28b82;
+}
+html[data-calendar-look="light"] {
+  color-scheme: light;
+  --cl-page: #ffffff;
+  --cl-shell: #f8fafd;
+  --cl-elevated: #ffffff;
+  --cl-hover: #e8eaed;
+  --cl-text: #1f1f1f;
+  --cl-secondary: #444746;
+  --cl-muted: #5f6368;
+  --cl-grid: #dadce0;
+  --cl-border: #747775;
+  --cl-accent: #0b57d0;
+  --cl-on-accent: #ffffff;
+  --cl-selected: #d3e3fd;
+  --cl-now: #b3261e;
+}
+html[data-calendar-look],
+html[data-calendar-look] .dark {
+  --nds-surface-page: var(--cl-page) !important;
+  --nds-surface-wash: var(--cl-shell) !important;
+  --nds-surface-elevated: var(--cl-elevated) !important;
+  --nds-surface-elevated-wax: var(--cl-elevated) !important;
+  --nds-surface-grayElevated: var(--cl-elevated) !important;
+  --nds-surface-grayElevatedHover: var(--cl-hover) !important;
+  --nds-surface-lightGrayElevated: var(--cl-elevated) !important;
+  --nds-surface-lightGrayElevatedHover: var(--cl-hover) !important;
+  --nds-text-primary: var(--cl-text) !important;
+  --nds-text-secondary: var(--cl-secondary) !important;
+  --nds-text-tertiary: var(--cl-muted) !important;
+  --nds-text-quaternary: var(--cl-muted) !important;
+  --nds-icon-primary: var(--cl-text) !important;
+  --nds-icon-secondary: var(--cl-secondary) !important;
+  --nds-icon-tertiary: var(--cl-muted) !important;
+  --nds-stroke-primary: var(--cl-border) !important;
+  --nds-stroke-secondary: var(--cl-grid) !important;
+  --nds-tint-primaryHover: var(--cl-hover) !important;
+  --nds-tint-primaryPressed: var(--cl-selected) !important;
+  --nds-fill-uiBlue: var(--cl-accent) !important;
+  --nds-text-uiBluePrimary: var(--cl-accent) !important;
+  --nds-icon-uiBluePrimary: var(--cl-accent) !important;
+  --nds-stroke-uiBluePrimary: var(--cl-accent) !important;
+  --nds-text-uiRedPrimary: var(--cl-now) !important;
+  --nds-icon-uiRedPrimary: var(--cl-now) !important;
+  --text-default: var(--cl-text) !important;
+  --text-body: var(--cl-secondary) !important;
+  --text-detail: var(--cl-muted) !important;
+  --text-selection: var(--cl-selected) !important;
+  --object-default: var(--cl-secondary) !important;
+  --object-active: var(--cl-text) !important;
+  --object-highlight: var(--cl-text) !important;
+  --object-highlight-bg: var(--cl-hover) !important;
+  --object-border: var(--cl-grid) !important;
+  --object-gradient-bg: linear-gradient(var(--cl-elevated), var(--cl-elevated)) !important;
+  --neutral-gradient-bg: linear-gradient(var(--cl-elevated), var(--cl-elevated)) !important;
+  --material-default: var(--cl-elevated) !important;
+  --layout-fill-grid-wknd: var(--cl-page) !important;
+  --layout-line-grid-h: var(--cl-grid) !important;
+  --layout-line-grid-v: var(--cl-grid) !important;
+  --layout-line-grid-h-wknd: var(--cl-grid) !important;
+  --layout-line-grid-v-wknd: var(--cl-grid) !important;
+  --bg-selected: var(--cl-selected) !important;
+  --input-border: inset 0 0 0 1px var(--cl-border) !important;
+  --input-highlight-border: inset 0 0 0 1px var(--cl-accent) !important;
+  --input-highlight-bg: var(--cl-hover) !important;
+  --kbs: var(--cl-secondary) !important;
+  --kbs-bg: var(--cl-hover) !important;
+  --calendar-red: var(--cl-now) !important;
+  --calendar-text-red: var(--cl-now) !important;
+}
+/* Stable component IDs observed in the live DOM, not generated style hashes. */
+html[data-calendar-look] :is(.sc-18kxtj6-5,.sc-18kxtj6-3,.sc-16r9m8z-13,.sc-jm22j0-0) {background:var(--cl-shell) !important;}
+html[data-calendar-look] .rdp-today .rdp-day_button {background:var(--cl-accent) !important;color:var(--cl-on-accent) !important;}
+html[data-calendar-look] .rdp-selected:not(.rdp-today) .rdp-day_button {background:var(--cl-selected) !important;color:var(--cl-text) !important;}
+html[data-calendar-look] [data-cl-event] {
+  --background-color: var(--cl-event-bg) !important;
+  --foreground-color-primary: var(--cl-event-fg) !important;
+  --foreground-color-secondary: var(--cl-event-fg) !important;
+  --ribbon-color-primary: var(--cl-event-border) !important;
+  --ribbon-color-secondary: var(--cl-event-border) !important;
+  --border-color: var(--cl-event-border) !important;
+  text-decoration-color: var(--cl-event-fg) !important;
+}
+html[data-calendar-look] [data-cl-event="outline"] {
+  --ribbon-color-primary: var(--cl-page) !important;
+  --ribbon-color-secondary: var(--cl-page) !important;
+}
+html[data-calendar-look],
+html[data-calendar-look] .dark {
+  --nds-icon-grayPrimary: var(--cl-secondary) !important;
+  --nds-icon-graySecondary: var(--cl-muted) !important;
+  --nds-icon-lightGrayPrimary: var(--cl-secondary) !important;
+  --nds-icon-lightGraySecondary: var(--cl-muted) !important;
+  --nds-stroke-grayPrimary: var(--cl-secondary) !important;
+  --nds-stroke-graySecondary: var(--cl-grid) !important;
+  --nds-state-hover: var(--cl-hover) !important;
+  --nds-state-pressed: var(--cl-selected) !important;
+  --nds-fill-graySecondary: var(--cl-hover) !important;
+  --nds-fill-lightGraySecondary: var(--cl-hover) !important;
+}
+html[data-calendar-look] .rdp-today {opacity:1 !important;}
+html[data-calendar-look] .rdp-today .sc-w5o7yy-7 {background:var(--cl-accent) !important;}
+html[data-calendar-look] .rdp-today .sc-gnt4zv-0 {color:var(--cl-on-accent) !important;}
+html[data-calendar-look] [data-cl-event] .sc-1axd7p-6 {color:var(--cl-event-fg) !important;}
+
+/* Paint the complete canvas, including transparent areas around the app. */
+html[data-calendar-look],
+html[data-calendar-look] body,
+html[data-calendar-look] #main,
+html[data-calendar-look] .sc-1dgkbqj-1 {
+  background-color: var(--cl-page) !important;
+  color: var(--cl-text) !important;
+}
+html[data-calendar-look="light"],
+html[data-calendar-look="light"] body {color-scheme: light !important;}
+/* Native dark components may redeclare tokens below the root. */
+html[data-calendar-look] .sc-gfyskm-3 {
+  --neutral-gradient-bg: linear-gradient(var(--cl-elevated), var(--cl-elevated)) !important;
+  --object-gradient-bg: linear-gradient(var(--cl-elevated), var(--cl-elevated)) !important;
+  --nds-text-primary: var(--cl-text) !important;
+  --nds-stroke-primary: var(--cl-border) !important;
+  --nds-stroke-secondary: var(--cl-grid) !important;
+  --nds-state-hover: var(--cl-hover) !important;
+  --nds-state-pressed: var(--cl-selected) !important;
+}
+html[data-calendar-look] .sc-14p00rd-5 {
+  --card-bg: var(--cl-shell) !important;
+  --card-highlight-bg: var(--cl-hover) !important;
+  --card-active-bg: var(--cl-selected) !important;
+}
+html[data-calendar-look] .sc-1k1busz-2 {--time-indicator-bg: var(--cl-page) !important;}

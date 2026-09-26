@@ -1,0 +1,10 @@
+# Local calendar DOM captures must never be published.
+/preview/
+/dist/
+.DS_Store
+.env
+.env.*
+*.pem
+*.key
+*.log
+node_modules/
