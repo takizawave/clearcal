@@ -2,7 +2,7 @@
   'use strict';
   const rootAttribute='data-calendar-look', chipSelector='[data-event-chip-key]';
   const ownProperties=['--cl-event-bg','--cl-event-fg','--cl-event-border','--cl-event-icon'];
-  let settings={enabled:true,mode:'light'}, revision=0, timer;
+  let settings={enabled:true,mode:'light'}, revision=0, scheduled=false;
   const pending=new Set(), fingerprints=new WeakMap();
   function colorChip(chip) {
     if(!chip.isConnected)return;
@@ -37,17 +37,20 @@
         node.querySelectorAll(chipSelector).forEach(e=>pending.add(e));
       }
     }
-    if(pending.size&&!timer)timer=setTimeout(flush,40);
+    // React replaces native colors when a chip is selected. Correct them before
+    // the next paint instead of exposing the native saturated fill for 40ms.
+    if(pending.size&&!scheduled){scheduled=true;queueMicrotask(flush);}
   });
   function observe(){observer.observe(document.documentElement,{subtree:true,childList:true,attributes:true,attributeFilter:['style','data-event-chip-key','d','class']});}
   function flush(){
-    timer=undefined;observer.disconnect();
+    if(!scheduled)return;
+    scheduled=false;observer.disconnect();
     if(settings.enabled)pending.forEach(colorChip);
     pending.clear();if(settings.enabled)observe();
   }
   function apply(){
     const root=document.documentElement;if(!root)return;
-    observer.disconnect();clearTimeout(timer);timer=undefined;pending.clear();
+    observer.disconnect();scheduled=false;pending.clear();
     if(settings.enabled){
       root.setAttribute(rootAttribute,settings.mode);
       document.querySelectorAll(chipSelector).forEach(colorChip);observe();

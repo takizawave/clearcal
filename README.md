@@ -75,11 +75,14 @@ ZIPは `dist/clearcal.zip` に生成されます。梱包対象はスクリプ�
 - 両テーマで塗り・枠線の予定色のコントラスト計算
 - ローカルの実DOMコピー83件で予定名・時刻を測定：ダーク最低4.63:1、ライト最低4.79:1
 - 予定の動的追加・色変更への追従
+- 不在の選択・解除でスタイルが置き換わった直後の描画と、無効化時の復元（ライト・ダーク）
 - 無効化時の復元、予定の位置とサイズが変わらないこと
 
 検証に用いた実DOMコピーや個人のカレンダー情報は、このリポジトリと配布ZIPには含めていません。
 
 実アプリ上のドラッグ・予定編集を含む網羅的な動作検証は未実施です。Notion CalendarのDOM/CSS変更で調整が必要になる場合があります。
+
+選択状態の回帰テストは、リポジトリをローカルHTTPサーバーで配信し、`tests/fixtures/selection.html` の「Run selection regression」から実行できます。個人情報を含まない合成DOMを使っています。
 
 ## 不具合報告
 
@@ -160,6 +163,8 @@ The ZIP is written to `dist/clearcal.zip`. The packaging script includes only ex
 Validation includes contrast calculations for filled and outlined events in both themes; measurements of event titles and times across 83 events in a local DOM copy (minimum 4.63:1 in dark mode and 4.79:1 in light mode); dynamic event additions and color changes; and restoration of the original appearance without changing event positions or sizes.
 
 The DOM copy used for testing and personal calendar information are not included in this repository or the release ZIP. Comprehensive testing of interactions such as dragging and editing events in the live app has not been completed. Changes to Notion Calendar's DOM or CSS may require updates to the extension.
+
+The selection regression fixture checks the first rendered frame after inline styles are replaced during out-of-office selection and deselection, plus restoration when disabled, in both themes. Serve the repository with a local HTTP server, open `tests/fixtures/selection.html`, and click **Run selection regression**. This fixture uses synthetic DOM with no personal data.
 
 ### Reporting issues
 
