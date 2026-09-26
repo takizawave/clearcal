@@ -15,7 +15,7 @@ Notion Calendarを再読み込みします。既定はライトです。
 拡張アイコンで有効／無効、ライト／ダークを変更できます。
 更新時はChromeの拡張機能ページで再読み込みボタンを押してください。
 保存済みの配色設定は維持されます。
-https://github.com/takizawave/calendar-look-for-notion
+https://github.com/takizawave/clearcal
 '''
 
 def main():

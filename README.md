@@ -17,7 +17,7 @@ Notion Calendarを使っていて、予定の背景色と文字色のコント�
 
 ## インストール
 
-1. [最新版のリリース](https://github.com/takizawave/calendar-look-for-notion/releases/latest) から **calendar-look.zip** をダウンロードして解凍します。
+1. [最新版のリリース](https://github.com/takizawave/clearcal/releases/latest) から **calendar-look.zip** をダウンロードして解凍します。
 2. Chromeで `chrome://extensions` を開き、右上の「デベロッパーモード」をオンにします。
 3. 「パッケージ化されていない拡張機能を読み込む」を押します。
 4. 解凍した **calendar-lookフォルダ**を選択します。中のファイルは選択しません。ファイルがグレー表示でも正常です。
@@ -79,7 +79,7 @@ ZIPは `dist/calendar-look.zip` に生成されます。梱包対象はスクリ
 
 ## 不具合報告
 
-[Issues](https://github.com/takizawave/calendar-look-for-notion/issues) へ、Chromeのバージョン、ライト／ダークの設定、再現手順をお知らせください。スクリーンショットを添付する場合は、予定名・メールアドレスなどを隠してください。
+[Issues](https://github.com/takizawave/clearcal/issues) へ、Chromeのバージョン、ライト／ダークの設定、再現手順をお知らせください。スクリーンショットを添付する場合は、予定名・メールアドレスなどを隠してください。
 
 ## ライセンス
 
