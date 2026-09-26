@@ -19,10 +19,10 @@ Notion Calendarを使っていて、予定の背景色と文字色のコント�
 
 ## インストール
 
-1. [最新版のリリース](https://github.com/takizawave/clearcal/releases/latest) から **calendar-look.zip** をダウンロードして解凍します。
+1. [最新版のリリース](https://github.com/takizawave/clearcal/releases/latest) から **clearcal.zip** をダウンロードして解凍します。
 2. Chromeで `chrome://extensions` を開き、右上の「デベロッパーモード」をオンにします。
 3. 「パッケージ化されていない拡張機能を読み込む」を押します。
-4. 解凍した **calendar-lookフォルダ**を選択します。中のファイルは選択しません。ファイルがグレー表示でも正常です。
+4. 解凍した **clearcalフォルダ**を選択します。中のファイルは選択しません。ファイルがグレー表示でも正常です。
 5. [Notion Calendar](https://calendar.notion.so/) を再読み込みします。
 6. Chromeの拡張アイコンから、有効／無効とライト／ダークを変更できます。
 
@@ -66,7 +66,7 @@ node --test tests/*.test.cjs
 python3 scripts/package.py
 ```
 
-ZIPは `dist/calendar-look.zip` に生成されます。梱包対象はスクリプト内の許可リストに限定しています。
+ZIPは `dist/clearcal.zip` に生成されます。梱包対象はスクリプト内の許可リストに限定しています。
 
 検証済み:
 
@@ -108,10 +108,10 @@ It started as a personal tool, but I decided to share it for anyone who feels th
 
 ### Installation
 
-1. Download **calendar-look.zip** from the [latest release](https://github.com/takizawave/clearcal/releases/latest) and extract it.
+1. Download **clearcal.zip** from the [latest release](https://github.com/takizawave/clearcal/releases/latest) and extract it.
 2. Open `chrome://extensions` in Chrome and turn on **Developer mode**.
 3. Click **Load unpacked**.
-4. Select the extracted **calendar-look folder**. Select the folder itself, not an individual file; grayed-out files in the folder picker are normal.
+4. Select the extracted **clearcal folder**. Select the folder itself, not an individual file; grayed-out files in the folder picker are normal.
 5. Reload [Notion Calendar](https://calendar.notion.so/).
 6. Use the extension's toolbar popup to enable or disable it and switch between light and dark modes.
 
@@ -153,7 +153,7 @@ node --test tests/*.test.cjs
 python3 scripts/package.py
 ```
 
-The ZIP is written to `dist/calendar-look.zip`. The packaging script includes only explicitly listed files.
+The ZIP is written to `dist/clearcal.zip`. The packaging script includes only explicitly listed files.
 
 Validation includes contrast calculations for filled and outlined events in both themes; measurements of event titles and times across 83 events in a local DOM copy (minimum 4.63:1 in dark mode and 4.79:1 in light mode); dynamic event additions and color changes; and restoration of the original appearance without changing event positions or sizes.
 

@@ -10,7 +10,7 @@ FILES = (
     'popup.html', 'popup.css', 'popup.js', 'LICENSE', 'PRIVACY.md',
 )
 INSTALL = '''Chromeで chrome://extensions を開き、デベロッパーモードをオンにします。
-「パッケージ化されていない拡張機能を読み込む」から、このcalendar-lookフォルダを選択します。
+「パッケージ化されていない拡張機能を読み込む」から、このclearcalフォルダを選択します。
 Notion Calendarを再読み込みします。既定はライトです。
 拡張アイコンで有効／無効、ライト／ダークを変更できます。
 更新時はChromeの拡張機能ページで再読み込みボタンを押してください。
@@ -23,12 +23,12 @@ def main():
     for name in FILES:
         if not (ROOT / name).is_file():
             raise FileNotFoundError(name)
-    destination = ROOT / 'dist' / 'calendar-look.zip'
+    destination = ROOT / 'dist' / 'clearcal.zip'
     destination.parent.mkdir(exist_ok=True)
     with ZipFile(destination, 'w', ZIP_DEFLATED) as archive:
         for name in FILES:
-            archive.write(ROOT / name, 'calendar-look/' + name)
-        archive.writestr('calendar-look/INSTALL.txt', INSTALL)
+            archive.write(ROOT / name, 'clearcal/' + name)
+        archive.writestr('clearcal/INSTALL.txt', INSTALL)
     print(f'Built {destination.name} (v{manifest["version"]})')
 
 if __name__ == '__main__':
