@@ -25,9 +25,9 @@ Notion Calendarの配色をGoogle Calendar風にする、非公式Chrome拡張�
 
 ![ClearCalのオン・オフで、通常の予定と不在の配色が切り替わる10秒デモ](marketing/demo/clearcal-toggle.gif)
 
-[動画を見る・ダウンロードする（MP4・10秒、クリック音あり）](https://github.com/takizawave/clearcal/raw/refs/heads/main/marketing/demo/clearcal-toggle.mp4)
+[動画を見る・ダウンロードする（MP4・1080p・10秒、クリック音あり）](https://github.com/takizawave/clearcal/raw/refs/heads/main/marketing/demo/clearcal-toggle.mp4)
 
-*10-second demo with fictional events: toggle ClearCal on, off, and on. Same layout; different colors. The MP4 includes subtle click sounds.*
+*10-second demo with fictional events: toggle ClearCal on, off, and on. Same layout; different colors. The 1080p MP4 includes subtle click sounds.*
 
 ## 作ったきっかけ
 
