@@ -57,15 +57,31 @@ var CalendarLookColors = (() => {
     }
     return readableText(bg);
   }
-  function eventColors(background,foreground,border,mode) {
+  // The out-of-office title icon observed in Notion Calendar (2026-09-26).
+  // Match the complete geometry rather than reading/localizing event titles.
+  const outOfOfficePath='M13 2.5A4.5 4.5 0 0 1 17.5 7v6a4.5 4.5 0 0 1-4.5 4.5H7A4.5 4.5 0 0 1 2.5 13V7A4.5 4.5 0 0 1 7 2.5zm.53 3.97a.75.75 0 0 0-.943-.097l-.117.097L10 8.94 7.53 6.47l-.117-.097a.751.751 0 0 0-1.04 1.04l.097.117L8.94 10l-2.47 2.47a.75.75 0 0 0 1.06 1.06L10 11.06l2.47 2.47.117.097a.751.751 0 0 0 1.04-1.04l-.097-.117L11.06 10l2.47-2.47.097-.117a.75.75 0 0 0-.097-.943';
+  function isOutOfOfficePath(path) {
+    return typeof path==='string' && path.replace(/\s+/g,'')===outOfOfficePath.replace(/\s+/g,'');
+  }
+  function tint(color,surface,amount) {
+    const base=rgb(surface);
+    return `rgb(${rgb(color).map((v,i)=>Math.round(base[i]+(v-base[i])*amount)).join(', ')})`;
+  }
+  function eventColors(background,foreground,border,mode,outOfOffice=false) {
     const outlined=!rgb(background);
     const source=outlined?(rgb(border)?border:foreground):(rgb(foreground)?foreground:background);
     const fill=palette(source,mode); if(!fill)return null;
     const surface=mode==='dark'?'#131314':'#ffffff';
+    if(outOfOffice&&!outlined) {
+      const muted=tint(fill,surface,mode==='dark'?0.3:0.12);
+      const text=mode==='dark'?'#e3e3e3':'#1f1f1f';
+      return {background:muted,foreground:contrast(text,muted)>=4.5?text:readableText(muted),
+        border:muted,icon:accessibleAccent(fill,muted),outlined:false};
+    }
     return {background:outlined?surface:fill,
       foreground:outlined?accessibleAccent(fill,surface):readableText(fill),
       border:outlined?accessibleAccent(fill,surface):fill, outlined};
   }
-  return {rgb,contrast,palette,eventColors,readableText,palettes};
+  return {rgb,contrast,palette,eventColors,readableText,palettes,isOutOfOfficePath};
 })();
 if(typeof module!=='undefined')module.exports=CalendarLookColors;

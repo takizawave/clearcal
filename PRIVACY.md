@@ -1,10 +1,10 @@
 # Privacy / プライバシー
 
-Calendar Look for Notionは、Notion Calendarの配色を端末内で変更する拡張です。
+ClearCal — Contrast for Notion Calendarは、Notion Calendarの配色を端末内で変更する拡張です。
 
 ## 参照するもの
 
-`calendar.notion.so` の予定要素をCSSセレクタで検出し、背景色・文字色・枠線色のスタイル値を参照します。予定名、説明、メールアドレス、イベント識別子の値を取得する処理はありません。
+`calendar.notion.so` の予定要素をCSSセレクタで検出し、背景色・文字色・枠線色のスタイル値と、不在を示すアイコンの形状を参照します。予定名、説明、メールアドレス、イベント識別子の値を取得する処理はありません。
 
 ## 保存するもの
 

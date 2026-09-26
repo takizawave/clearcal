@@ -1,7 +1,7 @@
 (() => {
   'use strict';
   const rootAttribute='data-calendar-look', chipSelector='[data-event-chip-key]';
-  const ownProperties=['--cl-event-bg','--cl-event-fg','--cl-event-border'];
+  const ownProperties=['--cl-event-bg','--cl-event-fg','--cl-event-border','--cl-event-icon'];
   let settings={enabled:true,mode:'light'}, revision=0, timer;
   const pending=new Set(), fingerprints=new WeakMap();
   function colorChip(chip) {
@@ -9,19 +9,26 @@
     const s=chip.style;
     // Read native inline values, never overwrite Notion's own properties.
     const input=['--background-color','--foreground-color-primary','--border-color'].map(k=>s.getPropertyValue(k));
-    const signature=JSON.stringify([settings.mode,...input]);
+    const outOfOffice=[...chip.querySelectorAll('.sc-1axd7p-5 svg path')]
+      .some(path=>CalendarLookColors.isOutOfOfficePath(path.getAttribute('d')));
+    const signature=JSON.stringify([settings.mode,...input,outOfOffice]);
     if(fingerprints.get(chip)===signature && ownProperties.every(k=>s.getPropertyValue(k)))return;
     fingerprints.set(chip,signature);
-    const colors=CalendarLookColors.eventColors(...input,settings.mode);
-    if(!colors){chip.removeAttribute('data-cl-event');ownProperties.forEach(k=>s.removeProperty(k));return;}
+    const colors=CalendarLookColors.eventColors(...input,settings.mode,outOfOffice);
+    if(!colors){chip.removeAttribute('data-cl-event');chip.removeAttribute('data-cl-out-of-office');ownProperties.forEach(k=>s.removeProperty(k));return;}
     chip.setAttribute('data-cl-event',colors.outlined?'outline':'filled');
+    chip.toggleAttribute('data-cl-out-of-office',outOfOffice);
     s.setProperty(ownProperties[0],colors.background);
     s.setProperty(ownProperties[1],colors.foreground);
     s.setProperty(ownProperties[2],colors.border);
+    s.setProperty(ownProperties[3],colors.icon||colors.foreground);
   }
   const observer=new MutationObserver(records=>{
     if(!settings.enabled)return;
     for(const record of records) {
+      // Icons may be added, removed or replaced when a virtualized chip is reused.
+      const owner=record.target.nodeType===1?record.target.closest(chipSelector):null;
+      if(owner)pending.add(owner);
       if(record.type==='attributes'){
         if(record.target.matches(chipSelector))pending.add(record.target);
       } else for(const node of record.addedNodes){
@@ -32,7 +39,7 @@
     }
     if(pending.size&&!timer)timer=setTimeout(flush,40);
   });
-  function observe(){observer.observe(document.documentElement,{subtree:true,childList:true,attributes:true,attributeFilter:['style','data-event-chip-key']});}
+  function observe(){observer.observe(document.documentElement,{subtree:true,childList:true,attributes:true,attributeFilter:['style','data-event-chip-key','d','class']});}
   function flush(){
     timer=undefined;observer.disconnect();
     if(settings.enabled)pending.forEach(colorChip);
@@ -47,7 +54,7 @@
     }else{
       root.removeAttribute(rootAttribute);
       document.querySelectorAll('[data-cl-event]').forEach(chip=>{
-        chip.removeAttribute('data-cl-event');ownProperties.forEach(k=>chip.style.removeProperty(k));fingerprints.delete(chip);
+        chip.removeAttribute('data-cl-event');chip.removeAttribute('data-cl-out-of-office');ownProperties.forEach(k=>chip.style.removeProperty(k));fingerprints.delete(chip);
       });
     }
   }
