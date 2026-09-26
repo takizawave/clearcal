@@ -1,5 +1,7 @@
 # ClearCal — Contrast for Notion Calendar
 
+[English below](#english)
+
 Notion Calendarの配色をGoogle Calendar風にする、非公式Chrome拡張です。**白い背景のライトモードが既定**で、ダークモードにも切り替えられます。
 
 - 予定を見分けやすい濃い色で表示
@@ -84,3 +86,83 @@ ZIPは `dist/calendar-look.zip` に生成されます。梱包対象はスクリ
 ## ライセンス
 
 [MIT](LICENSE)。Google / Notionの公式拡張ではなく、両社とは関係ありません。
+
+---
+
+## English
+
+ClearCal is an unofficial Chrome extension that gives Notion Calendar a Google Calendar-inspired color palette. **Light mode with a white background is the default**, with an optional dark mode.
+
+- Stronger event colors to help distinguish events
+- Soft, tinted backgrounds and readable text for out-of-office events
+- Event title and time colors adjusted for contrast against their backgrounds
+- Consistent colors across the calendar, sidebar, and toolbar
+- A toggle to restore Notion Calendar's original appearance
+- No changes to event positions, sizes, interactions, or calendar sync
+
+### Why I built it
+
+While using Notion Calendar, I sometimes found the contrast between event backgrounds and text too low for me to comfortably read event titles and times. I built this extension for myself, taking inspiration from the Google Calendar colors I was used to.
+
+It started as a personal tool, but I decided to share it for anyone who feels the same way. Readability depends on your preferences and setup, so give it a try and see whether it works for you.
+
+### Installation
+
+1. Download **calendar-look.zip** from the [latest release](https://github.com/takizawave/clearcal/releases/latest) and extract it.
+2. Open `chrome://extensions` in Chrome and turn on **Developer mode**.
+3. Click **Load unpacked**.
+4. Select the extracted **calendar-look folder**. Select the folder itself, not an individual file; grayed-out files in the folder picker are normal.
+5. Reload [Notion Calendar](https://calendar.notion.so/).
+6. Use the extension's toolbar popup to enable or disable it and switch between light and dark modes.
+
+ClearCal is not currently listed on the Chrome Web Store. You can also download the source using GitHub's **Code → Download ZIP** and load the folder containing `manifest.json`. No build step or npm install is required.
+
+To update, replace the files in the folder you loaded with those from the new ZIP, click the extension's reload button at `chrome://extensions`, and reload Notion Calendar. Your saved theme preference is preserved.
+
+### Colors and contrast
+
+| Element | Light | Dark |
+| --- | --- | --- |
+| Calendar background | `#ffffff` | `#131314` |
+| Sidebar and toolbar | `#f8fafd` | `#1b1b1b` |
+| Primary text | `#1f1f1f` | `#e3e3e3` |
+| Secondary text | `#444746` | `#c4c7c5` |
+| Grid lines | `#dadce0` | `#333537` |
+| Today highlight | `#0b57d0` | `#a8c7fa` |
+
+The main dark-mode colors are based on Google Calendar's displayed colors; light mode uses a Google-inspired palette. Events are mapped to ten colors plus gray, keeping close to their original hue. This does not sync color settings from your Google account or reproduce Google Calendar exactly.
+
+For ordinary event titles and times, ClearCal calculates text colors with a contrast ratio of at least **4.5:1** against the event fill. Outline-only events retain their outline appearance. This text contrast threshold does not apply to grid lines, and it is not a claim of full WCAG compliance across every state, including dragging, disabled elements, or translucent content.
+
+### Privacy
+
+- Runs only on `https://calendar.notion.so/*`.
+- Requests only the `storage` permission and saves the enabled state and theme choice locally.
+- Inspects event CSS colors and the shape of the out-of-office icon, without reading event titles, email addresses, or event identifier values.
+- Makes no network requests of its own and includes no analytics, tracking, remote code, or calendar API writes.
+- Removes its theme attributes and added color properties when disabled.
+
+See [PRIVACY.md](PRIVACY.md) for the privacy policy in Japanese.
+
+### Development and testing
+
+Use Node.js 18 or later to run the tests and Python 3 to build the ZIP. No additional dependencies are required.
+
+```sh
+node --test tests/*.test.cjs
+python3 scripts/package.py
+```
+
+The ZIP is written to `dist/calendar-look.zip`. The packaging script includes only explicitly listed files.
+
+Validation includes contrast calculations for filled and outlined events in both themes; measurements of event titles and times across 83 events in a local DOM copy (minimum 4.63:1 in dark mode and 4.79:1 in light mode); dynamic event additions and color changes; and restoration of the original appearance without changing event positions or sizes.
+
+The DOM copy used for testing and personal calendar information are not included in this repository or the release ZIP. Comprehensive testing of interactions such as dragging and editing events in the live app has not been completed. Changes to Notion Calendar's DOM or CSS may require updates to the extension.
+
+### Reporting issues
+
+Please include your Chrome version, theme choice, and steps to reproduce the problem in [GitHub Issues](https://github.com/takizawave/clearcal/issues). Hide event titles, email addresses, and other personal information in screenshots.
+
+### License
+
+[MIT](LICENSE). ClearCal is not an official Google or Notion extension and is not affiliated with either company.
