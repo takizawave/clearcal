@@ -1,6 +1,12 @@
 # ClearCal — Contrast for Notion Calendar
 
-![ClearCal — 予定が、くっきり。Contrast for Notion Calendar](marketing/clearcal-thumbnail.png)
+![通常予定の変更前・変更後。左はNotion Calendarの元の配色、右はClearCalのライトモード。](marketing/comparisons/events-before-after.png)
+
+![不在の変更前・変更後。選択中の青い不在も、ClearCalでは淡い背景と濃い文字で表示。](marketing/comparisons/away-before-after.png)
+
+実際のNotion CalendarのDOM・CSSを使ったローカル画面の比較です。予定名・時刻・配置はすべて架空で、変更後にはClearCalの実コードを適用しています。画像生成によるUIではありません。
+
+*Screenshots of a local view using Notion Calendar's actual DOM/CSS, with entirely fictional event names, times, and placements. The after view runs ClearCal's actual code. No AI-generated UI or personal calendar data is shown.*
 
 [English below](#english)
 
