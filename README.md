@@ -2,7 +2,7 @@
 
 ### [⬇ ClearCalをダウンロード（ZIP）](https://github.com/takizawave/clearcal/releases/latest/download/clearcal.zip)
 
-無料・Chrome向け。解凍して拡張機能として読み込めます。 **[インストール手順](#インストール)** · [English](#english)
+無料・Chrome向け。解凍して拡張機能として読み込めます。 **[インストール手順](#インストール)** · **[▶ 10秒の動画](#10秒で見る)** · [English](#english)
 
 Notion Calendarの配色をGoogle Calendar風にする、非公式Chrome拡張です。**白い背景のライトモードが既定**で、ダークモードにも切り替えられます。
 
