@@ -1,16 +1,16 @@
 # ClearCal — Contrast for Notion Calendar
 
-![同じ予定をNotion CalendarとClearCal版で比較。左はオリジナル、右はGoogle Calendar風の配色。](marketing/comparisons/events-before-after.png)
+### [⬇ ClearCalをダウンロード（ZIP）](https://github.com/takizawave/clearcal/releases/latest/download/clearcal.zip)
 
-![Notion CalendarとClearCal版の不在表示。ClearCal版では選択中も淡い背景と濃い文字で表示。](marketing/comparisons/away-before-after.png)
-
-Notion Calendarのオリジナル表示と、拡張を適用したClearCal版の比較です。実際のDOM・CSSを使ったローカル画面に、架空の予定名・時刻・配置を入れています。ClearCal版には拡張の実コードを適用しており、画像生成によるUIではありません。
-
-*Notion Calendar's original appearance alongside the ClearCal version. These local screenshots use the actual DOM/CSS with entirely fictional event names, times, and placements. The ClearCal version runs the extension's actual code. No AI-generated UI or personal calendar data is shown.*
-
-[English below](#english)
+無料・Chrome向け。解凍して拡張機能として読み込めます。 **[インストール手順](#インストール)** · [English](#english)
 
 Notion Calendarの配色をGoogle Calendar風にする、非公式Chrome拡張です。**白い背景のライトモードが既定**で、ダークモードにも切り替えられます。
+
+![同じ予定をNotion CalendarとClearCal版で比較。左はオリジナル、右はGoogle Calendar風の配色。](marketing/comparisons/events-before-after.png)
+
+実際のDOM・CSSを使ったローカル画面で、Notion CalendarとClearCal版を比較しています。予定名・時刻・配置はすべて架空です。
+
+*Actual UI DOM/CSS with fictional events; the ClearCal version runs the extension code. No AI-generated UI or personal calendar data.*
 
 - 予定を見分けやすい濃い色で表示
 - 不在の予定は元の色系統を保った淡い背景と読みやすい文字で表示
@@ -27,7 +27,7 @@ Notion Calendarを使っていて、予定の背景色と文字色のコント�
 
 ## インストール
 
-1. [最新版のリリース](https://github.com/takizawave/clearcal/releases/latest) から **clearcal.zip** をダウンロードして解凍します。
+1. **[clearcal.zipをダウンロード](https://github.com/takizawave/clearcal/releases/latest/download/clearcal.zip)** して解凍します。
 2. Chromeで `chrome://extensions` を開き、右上の「デベロッパーモード」をオンにします。
 3. 「パッケージ化されていない拡張機能を読み込む」を押します。
 4. 解凍した **clearcalフォルダ**を選択します。中のファイルは選択しません。ファイルがグレー表示でも正常です。
@@ -43,6 +43,10 @@ Chrome Web Storeには公開していません。GitHubの「Code → Download Z
 旧名の「Calendar Look」や別フォルダのClearCalを同時に有効にすると、色の上書きが競合します。拡張機能一覧で旧版を無効にし、ClearCalは1つだけ有効にしてください。
 
 ## 配色とコントラスト
+
+通常の予定は濃い色、不在は淡い背景と濃い文字で表示します。枠線だけの予定は、その表示を保ちます。
+
+![Notion CalendarとClearCal版の通常予定・不在・枠線の予定。元の表示では通常予定に濃い帯が付き、ClearCal版では通常予定を濃く、不在を淡く表示。](marketing/comparisons/away-before-after.png)
 
 | 対象 | ライト | ダーク |
 | --- | --- | --- |
@@ -121,7 +125,7 @@ It started as a personal tool, but I decided to share it for anyone who feels th
 
 ### Installation
 
-1. Download **clearcal.zip** from the [latest release](https://github.com/takizawave/clearcal/releases/latest) and extract it.
+1. **[Download clearcal.zip](https://github.com/takizawave/clearcal/releases/latest/download/clearcal.zip)** and extract it.
 2. Open `chrome://extensions` in Chrome and turn on **Developer mode**.
 3. Click **Load unpacked**.
 4. Select the extracted **clearcal folder**. Select the folder itself, not an individual file; grayed-out files in the folder picker are normal.
