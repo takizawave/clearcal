@@ -34,6 +34,8 @@ Chrome Web Storeには公開していません。GitHubの「Code → Download Z
 
 新しいZIPを解凍し、現在読み込んでいるフォルダのファイルを置き換えます。`chrome://extensions` で拡張の再読み込みボタンを押し、Notion Calendarも再読み込みしてください。保存済みの配色設定は維持されます。
 
+旧名の「Calendar Look」や別フォルダのClearCalを同時に有効にすると、色の上書きが競合します。拡張機能一覧で旧版を無効にし、ClearCalは1つだけ有効にしてください。
+
 ## 配色とコントラスト
 
 | 対象 | ライト | ダーク |
@@ -123,6 +125,8 @@ It started as a personal tool, but I decided to share it for anyone who feels th
 ClearCal is not currently listed on the Chrome Web Store. You can also download the source using GitHub's **Code → Download ZIP** and load the folder containing `manifest.json`. No build step or npm install is required.
 
 To update, replace the files in the folder you loaded with those from the new ZIP, click the extension's reload button at `chrome://extensions`, and reload Notion Calendar. Your saved theme preference is preserved.
+
+Keep only one copy enabled. Disable the older **Calendar Look** extension or any other copy of ClearCal in Chrome's extension list; multiple enabled copies can overwrite each other's colors.
 
 ### Colors and contrast
 

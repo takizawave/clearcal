@@ -2,6 +2,9 @@
   'use strict';
   const rootAttribute='data-calendar-look', chipSelector='[data-event-chip-key]';
   const ownProperties=['--cl-event-bg','--cl-event-fg','--cl-event-border','--cl-event-icon'];
+  // Keep out-of-office colors independent of the ordinary event palette.
+  const awayProperties=['--clearcal-away-bg','--clearcal-away-fg','--clearcal-away-border','--clearcal-away-icon'];
+  const allProperties=[...ownProperties,...awayProperties];
   let settings={enabled:true,mode:'light'}, revision=0, scheduled=false;
   const pending=new Set(), fingerprints=new WeakMap();
   function colorChip(chip) {
@@ -9,19 +12,25 @@
     const s=chip.style;
     // Read native inline values, never overwrite Notion's own properties.
     const input=['--background-color','--foreground-color-primary','--border-color'].map(k=>s.getPropertyValue(k));
-    const outOfOffice=[...chip.querySelectorAll('.sc-1axd7p-5 svg path')]
+    const outOfOffice=[...chip.querySelectorAll('svg path')]
       .some(path=>CalendarLookColors.isOutOfOfficePath(path.getAttribute('d')));
     const signature=JSON.stringify([settings.mode,...input,outOfOffice]);
-    if(fingerprints.get(chip)===signature && ownProperties.every(k=>s.getPropertyValue(k)))return;
+    const required=outOfOffice?allProperties:ownProperties;
+    if(fingerprints.get(chip)===signature && required.every(k=>s.getPropertyValue(k)) &&
+      chip.hasAttribute('data-cl-event') && chip.hasAttribute('data-cl-out-of-office')===outOfOffice)return;
     fingerprints.set(chip,signature);
     const colors=CalendarLookColors.eventColors(...input,settings.mode,outOfOffice);
-    if(!colors){chip.removeAttribute('data-cl-event');chip.removeAttribute('data-cl-out-of-office');ownProperties.forEach(k=>s.removeProperty(k));return;}
+    if(!colors){chip.removeAttribute('data-cl-event');chip.removeAttribute('data-cl-out-of-office');allProperties.forEach(k=>s.removeProperty(k));return;}
     chip.setAttribute('data-cl-event',colors.outlined?'outline':'filled');
     chip.toggleAttribute('data-cl-out-of-office',outOfOffice);
     s.setProperty(ownProperties[0],colors.background);
     s.setProperty(ownProperties[1],colors.foreground);
     s.setProperty(ownProperties[2],colors.border);
     s.setProperty(ownProperties[3],colors.icon||colors.foreground);
+    if(outOfOffice){
+      [colors.background,colors.foreground,colors.border,colors.icon||colors.foreground]
+        .forEach((value,i)=>s.setProperty(awayProperties[i],value));
+    }else awayProperties.forEach(k=>s.removeProperty(k));
   }
   const observer=new MutationObserver(records=>{
     if(!settings.enabled)return;
@@ -57,7 +66,7 @@
     }else{
       root.removeAttribute(rootAttribute);
       document.querySelectorAll('[data-cl-event]').forEach(chip=>{
-        chip.removeAttribute('data-cl-event');chip.removeAttribute('data-cl-out-of-office');ownProperties.forEach(k=>chip.style.removeProperty(k));fingerprints.delete(chip);
+        chip.removeAttribute('data-cl-event');chip.removeAttribute('data-cl-out-of-office');allProperties.forEach(k=>chip.style.removeProperty(k));fingerprints.delete(chip);
       });
     }
   }

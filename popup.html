@@ -18,10 +18,12 @@
         <input id="enabled" type="checkbox" role="switch" disabled>
       </label>
       <label class="mode-label" for="mode">配色</label>
-      <select id="mode" disabled>
-        <option value="light">ライト · Google Calendar風</option>
-        <option value="dark">ダーク · Google Calendar風</option>
-      </select>
+      <div class="select-wrap">
+        <select id="mode" disabled>
+          <option value="light">ライト · Google Calendar風</option>
+          <option value="dark">ダーク · Google Calendar風</option>
+        </select>
+      </div>
       <p class="description">予定の色をくっきり、文字は読みやすく。<br>レイアウトはそのまま、配色だけを変えます。</p>
       <p id="status" role="status" aria-live="polite">設定を読み込み中…</p>
       <a href="https://calendar.notion.so/" target="_blank" rel="noopener noreferrer">Notion Calendarを開く <span aria-hidden="true">↗</span></a>
