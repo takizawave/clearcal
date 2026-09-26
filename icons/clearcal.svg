@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <title>ClearCal</title>
+  <rect x="4" y="4" width="26" height="26" rx="7" fill="#1f5fff"/>
+  <rect x="34" y="4" width="26" height="26" rx="7" fill="#a4caff"/>
+  <rect x="4" y="34" width="26" height="26" rx="7" fill="#9170ea"/>
+  <rect x="34" y="34" width="26" height="26" rx="7" fill="#dbe7fc"/>
+</svg>

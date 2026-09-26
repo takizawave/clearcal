@@ -8,6 +8,8 @@ ROOT = Path(__file__).resolve().parent.parent
 FILES = (
     'manifest.json', 'colors.js', 'content.js', 'theme.css',
     'popup.html', 'popup.css', 'popup.js', 'LICENSE', 'PRIVACY.md',
+    'icons/icon-16.png', 'icons/icon-32.png',
+    'icons/icon-48.png', 'icons/icon-128.png',
 )
 INSTALL = '''Chromeで chrome://extensions を開き、デベロッパーモードをオンにします。
 「パッケージ化されていない拡張機能を読み込む」から、このclearcalフォルダを選択します。

@@ -1,12 +1,24 @@
 {
   "manifest_version": 3,
   "name": "ClearCal — Contrast for Notion Calendar",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Notion CalendarをGoogle Calendar風の見た目に切り替えます。",
   "permissions": [
     "storage"
   ],
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
   "action": {
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png",
+      "48": "icons/icon-48.png",
+      "128": "icons/icon-128.png"
+    },
     "default_title": "ClearCal — Contrast for Notion Calendar",
     "default_popup": "popup.html"
   },
