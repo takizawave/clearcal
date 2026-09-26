@@ -6,12 +6,6 @@
 
 Notion Calendarの配色をGoogle Calendar風にする、非公式Chrome拡張です。**白い背景のライトモードが既定**で、ダークモードにも切り替えられます。
 
-> **配色について、ひとこと**
->
-> Cronから続くNotion Calendarのデザインと、[Raphael Schaadさん](https://www.notion.com/blog/introducing-notion-calendar)をはじめとするチームの設計へのこだわりに敬意を持っています。もしこの配色変更が、その設計思想に反していたらごめんなさい。
->
-> ただ、自分には元の配色が色覚的に少し見分けづらく、予定名や時刻のコントラストも読み取りづらく感じることがありました。自分の色の見え方に合わせて、使いやすくするために作った個人的な拡張です。
-
 ![同じ予定をNotion CalendarとClearCal版で比較。左はオリジナル、右はGoogle Calendar風の配色。](marketing/comparisons/events-before-after.png)
 
 実際のDOM・CSSを使ったローカル画面で、Notion CalendarとClearCal版を比較しています。予定名・時刻・配置はすべて架空です。
@@ -37,9 +31,13 @@ Notion Calendarの配色をGoogle Calendar風にする、非公式Chrome拡張�
 
 ## 作ったきっかけ
 
-Notion Calendarを使っていて、予定の背景色と文字色のコントラストが自分には弱く、予定名や時刻を読み取りづらく感じることがありました。そこで、使い慣れたGoogle Calendarの配色を参考に、自分が見やすい色に調整するために作った拡張です。
+Notion Calendarを使う中で、自分の色の見え方では元の配色の一部を判別しづらく、予定名や時刻のコントラストにも読み取りづらさを感じることがありました。使い慣れたGoogle Calendarの配色を参考に、自分にとって見やすい色へ調整するために制作した拡張です。
 
 もともとは自分用ですが、同じように感じている人にも使ってもらえたらと思い、公開しました。見やすさには好みや環境による違いがあるので、まずは自分に合うか試してみてください。
+
+> **オリジナルの設計への敬意**
+>
+> Cron／Notion Calendarの設計者である[Raphael Schaad氏](https://www.notion.com/blog/introducing-notion-calendar)をはじめ、開発チームの設計思想と細部への配慮に敬意を表します。本拡張による配色変更が本来の設計意図に沿わない場合には、ご容赦いただければ幸いです。
 
 ## インストール
 
@@ -126,12 +124,6 @@ ZIPは `dist/clearcal.zip` に生成されます。梱包対象はスクリプ�
 
 ClearCal is an unofficial Chrome extension that gives Notion Calendar a Google Calendar-inspired color palette. **Light mode with a white background is the default**, with an optional dark mode.
 
-> **A personal note on the colors**
->
-> I have a lot of respect for the design of Cron and Notion Calendar, and for the care [Raphael Schaad](https://www.notion.com/blog/introducing-notion-calendar) and the team put into it. If these color changes go against that design philosophy, I'm sorry.
->
-> With my own color perception, some of the original colors were a little hard to distinguish, and I sometimes found event titles and times difficult to read against their backgrounds. I made this personal extension to adjust the colors to what I can see more comfortably.
-
 - Stronger event colors to help distinguish events
 - Soft, tinted backgrounds and readable text for out-of-office events
 - Event title and time colors adjusted for contrast against their backgrounds
@@ -141,9 +133,13 @@ ClearCal is an unofficial Chrome extension that gives Notion Calendar a Google C
 
 ### Why I built it
 
-While using Notion Calendar, I sometimes found the contrast between event backgrounds and text too low for me to comfortably read event titles and times. I built this extension for myself, taking inspiration from the Google Calendar colors I was used to.
+With my own color perception, I found some of Notion Calendar's original colors difficult to distinguish, and the contrast sometimes made event titles and times difficult to read. I created this extension to adapt the colors to my personal needs, taking inspiration from the Google Calendar palette I was accustomed to.
 
 It started as a personal tool, but I decided to share it for anyone who feels the same way. Readability depends on your preferences and setup, so give it a try and see whether it works for you.
+
+> **Respect for the original design**
+>
+> I respect the design philosophy and attention to detail of [Raphael Schaad](https://www.notion.com/blog/introducing-notion-calendar), the designer behind Cron / Notion Calendar, and the development team. I ask for their understanding if these color adjustments depart from the original design intent.
 
 ### Installation
 
