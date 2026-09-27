@@ -37,6 +37,11 @@ Notion Calendarを使う中で、自分の色の見え方では元の配色の�
 
 Cron／Notion Calendarの設計・開発に携わる皆さまの設計思想に反していましたら、すみません。自分には元の配色が色覚的に少し見分けづらく、自分の見え方に合わせて作った個人的な拡張です。
 
+この2つの動画も面白かったので、よかったら見てみてください。
+
+- [From paper to pixels: why great ideas start on a napkin（9:27〜）](https://www.youtube.com/watch?v=NCgGs3d2SF4&t=567s)
+- [Design Masterclass — Cron Calendar（10:55〜）](https://www.youtube.com/watch?v=2MrNSjJFBBI&t=655s)
+
 ## インストール
 
 1. **[clearcal.zipをダウンロード](https://github.com/takizawave/clearcal/releases/latest/download/clearcal.zip)** して解凍します。
@@ -136,6 +141,11 @@ With my own color perception, I found some of Notion Calendar's original colors 
 It started as a personal tool, but I decided to share it for anyone who feels the same way. Readability depends on your preferences and setup, so give it a try and see whether it works for you.
 
 I'm sorry if these changes go against the design philosophy of the people who design and develop Cron / Notion Calendar. Some of the original colors were a little difficult for me to distinguish, so I made this personal extension to suit my own color perception.
+
+I also enjoyed these two videos—give them a watch if you're interested.
+
+- [From paper to pixels: why great ideas start on a napkin (from 9:27)](https://www.youtube.com/watch?v=NCgGs3d2SF4&t=567s)
+- [Design Masterclass — Cron Calendar (from 10:55)](https://www.youtube.com/watch?v=2MrNSjJFBBI&t=655s)
 
 ### Installation
 
