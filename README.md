@@ -39,8 +39,8 @@ Cron／Notion Calendarの設計・開発に携わる皆さまの設計思想に�
 
 この2つの動画も面白かったので、よかったら見てみてください。
 
-- [From paper to pixels: why great ideas start on a napkin（9:27〜）](https://www.youtube.com/watch?v=NCgGs3d2SF4&t=567s)
-- [Design Masterclass — Cron Calendar（10:55〜）](https://www.youtube.com/watch?v=2MrNSjJFBBI&t=655s)
+- [From paper to pixels: why great ideas start on a napkin](https://www.youtube.com/watch?v=NCgGs3d2SF4)
+- [Design Masterclass — Cron Calendar](https://www.youtube.com/watch?v=2MrNSjJFBBI)
 
 ## インストール
 
@@ -144,8 +144,8 @@ I'm sorry if these changes go against the design philosophy of the people who de
 
 I also enjoyed these two videos—give them a watch if you're interested.
 
-- [From paper to pixels: why great ideas start on a napkin (from 9:27)](https://www.youtube.com/watch?v=NCgGs3d2SF4&t=567s)
-- [Design Masterclass — Cron Calendar (from 10:55)](https://www.youtube.com/watch?v=2MrNSjJFBBI&t=655s)
+- [From paper to pixels: why great ideas start on a napkin](https://www.youtube.com/watch?v=NCgGs3d2SF4)
+- [Design Masterclass — Cron Calendar](https://www.youtube.com/watch?v=2MrNSjJFBBI)
 
 ### Installation
 
