@@ -80,7 +80,7 @@ Chrome Web Storeには公開していません。GitHubの「Code → Download Z
 
 ## プライバシー
 
-- 対象サイトは `https://calendar.notion.so/*` のみ。
+- 対象サイトは `https://calendar.notion.so/*` と `https://calendar.notion.com/*` のみ。
 - 権限は `storage` のみで、有効／無効と配色モードを端末内に保存します。
 - 予定要素のCSS色と不在を示すアイコンの形状を参照し、予定名・メールアドレス・イベント識別子の値は読み取りません。
 - 拡張自体の外部通信、分析・トラッキング、リモートコード、カレンダーAPIへの書き込みはありません。
@@ -179,7 +179,7 @@ For ordinary event titles and times, ClearCal calculates text colors with a cont
 
 ### Privacy
 
-- Runs only on `https://calendar.notion.so/*`.
+- Runs only on `https://calendar.notion.so/*` and `https://calendar.notion.com/*`.
 - Requests only the `storage` permission and saves the enabled state and theme choice locally.
 - Inspects event CSS colors and the shape of the out-of-office icon, without reading event titles, email addresses, or event identifier values.
 - Makes no network requests of its own and includes no analytics, tracking, remote code, or calendar API writes.

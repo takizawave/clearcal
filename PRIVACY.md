@@ -4,7 +4,7 @@ ClearCal — Contrast for Notion Calendarは、Notion Calendarの配色を端末
 
 ## 参照するもの
 
-`calendar.notion.so` の予定要素をCSSセレクタで検出し、背景色・文字色・枠線色のスタイル値と、不在を示すアイコンの形状を参照します。予定名、説明、メールアドレス、イベント識別子の値を取得する処理はありません。
+`calendar.notion.so` と `calendar.notion.com` の予定要素をCSSセレクタで検出し、背景色・文字色・枠線色のスタイル値と、不在を示すアイコンの形状を参照します。予定名、説明、メールアドレス、イベント識別子の値を取得する処理はありません。
 
 ## 保存するもの
 
@@ -17,7 +17,7 @@ Chromeの `storage.local` に、拡張の有効／無効とライト／ダーク
 ## 権限
 
 - `storage`: 表示設定を保存するため。
-- 対象サイト: `https://calendar.notion.so/*`。配色変更に必要なcontent scriptをこのサイトだけで実行します。
+- 対象サイト: `https://calendar.notion.so/*` と `https://calendar.notion.com/*`。配色変更に必要なcontent scriptをこの2つのカレンダーサイトだけで実行します。
 
 ## 削除
 

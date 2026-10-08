@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "ClearCal — Contrast for Notion Calendar",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "Notion CalendarをGoogle Calendar風の見た目に切り替えます。",
   "permissions": [
     "storage"
@@ -25,7 +25,8 @@
   "content_scripts": [
     {
       "matches": [
-        "https://calendar.notion.so/*"
+        "https://calendar.notion.so/*",
+        "https://calendar.notion.com/*"
       ],
       "css": [
         "theme.css"
